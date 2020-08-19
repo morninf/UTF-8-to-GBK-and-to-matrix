@@ -1,16 +1,18 @@
 MYNAME = makefile
 CC = gcc
 
+CFLAGS = -g -std=c99 -w
+
 objects = Example.o font_convert.o
 
 example: $(objects)
-	cc -g -o example $(objects)
+	cc $(CFLAGS) -o example $(objects)
 
 Example.o: Example.c font_convert.h
-	cc -w -c -g Example.c 
+	cc $(CFLAGS) -c Example.c 
 	
 font_convert.o: font_convert.c  
-	cc -w -c -g font_convert.c 
+	cc $(CFLAGS) -c font_convert.c 
 	
 #比较稳健的clean做法，表示clean是一个伪目标
 .PHONY: clean

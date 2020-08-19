@@ -10,11 +10,12 @@
 
 static void show_matrix(uint8_t *data, size_t len)
 {
+	int i,n,m = 0;
 	if( len == 32 )
 	{
-		for(int i = 0 ; i < 16 ;i++)
+		for(i = 0 ; i < 16 ;i++)
 		{
-			for(int n=0;n<8;n++)
+			for(n=0;n<8;n++)
 			{
 				if(data[2*i] & (0x80>>n))
 				{
@@ -25,7 +26,7 @@ static void show_matrix(uint8_t *data, size_t len)
 					printf("**");
 				}
 			}
-			for(int m=0;m<8;m++)
+			for(m=0;m<8;m++)
 			{
 				if(data[2*i + 1] & (0x80>>m))
 				{
@@ -41,9 +42,9 @@ static void show_matrix(uint8_t *data, size_t len)
 	}
 	else
 	{
-		for(int i = 0 ; i < 16 ;i++)
+		for(i = 0 ; i < 16 ;i++)
 		{
-			for(int n=0;n<8;n++)
+			for(n=0;n<8;n++)
 			{
 				if(data[i] & (0x80>>n))
 				{
